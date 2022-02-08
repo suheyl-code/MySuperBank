@@ -1,5 +1,4 @@
-﻿
-using BankLibrary;
+﻿using BankLibrary;
 
 var account1 = new BankAccount("John", 10000);
 var account2 = new BankAccount("Mirana", 999);

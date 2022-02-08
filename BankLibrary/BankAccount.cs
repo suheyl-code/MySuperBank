@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Humanizer;
 
 namespace BankLibrary
 {
@@ -62,10 +63,10 @@ namespace BankLibrary
         public string GetAccountHistory()
         {
             var report = new StringBuilder();
-            report.AppendLine("\tDate\t\tAmount\tNote");
+            report.AppendLine("\tDate\t\t\tAmount\t\tNote");
             foreach (var item in allTransactions)
             {
-                report.AppendLine($"{item.Date}\t${item.Amount}\t{item.Notes}");
+                report.AppendLine($"{item.Date}\t${item.Amount}\t({item.AmountInWords})\t\t{item.Notes}");
             }
             report.AppendLine($"\tBalance: \t${this.Balance}");
             return report.ToString();
